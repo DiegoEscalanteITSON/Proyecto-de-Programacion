@@ -1,8 +1,8 @@
 # Codigo que genera reporte de ventas
 import pandas as pd
 import matplotlib.pyplot as plt
-from def_ventas import obtener_ventas
-from archivo_ventas import guardar_venta_en_txt
+from ventas import obtener_ventas
+from ventas import guardar_venta_en_txt
 
 def generar_reporte_ventas(juego, cantidad):
     ventas = generar_reporte_ventas()
