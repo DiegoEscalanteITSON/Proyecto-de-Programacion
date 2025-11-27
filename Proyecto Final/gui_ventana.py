@@ -26,6 +26,7 @@ def adrir_gui():
             return
         
         agregar_venta(producto)
+        guardar_venta_en_txt(producto, precio)
         messagebox.showinfo("Venta registrada")
 
     tk.Button(ventana, text="Registrar Venta", command=registrar_venta).pack(pady=10)
