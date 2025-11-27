@@ -8,4 +8,3 @@ Catalogo = [
     {"id": 5, "nombre": "Super Smash Bros Ultimate", "precio": 400 },
     {"id": 6, "nombre": "The Witcher 3", "precio": 350 },   
 ]
-    
