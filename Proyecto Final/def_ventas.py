@@ -3,8 +3,9 @@
 
 ventas = []   # lista global
 
-def agregar_venta(juego):
-    ventas.append(juego)
+def agregar_venta(juego, cantidad):
+    ventas.append((juego, cantidad))
+    print(f"Venta agregada: {juego} - Cantidad: {cantidad}")
 
 def obtener_ventas():
     return ventas
