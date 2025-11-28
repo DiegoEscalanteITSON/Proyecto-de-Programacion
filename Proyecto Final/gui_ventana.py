@@ -8,6 +8,7 @@ def adrir_gui():
     ventana = tk.Tk()
     ventana.title("Registro de Ventas")
     ventana.geometry("400x300")
+    ventana.mainloop() 
 
     tk.Label(ventana, text="Productos:").pack()
     entrada_producto = tk.Entry(ventana)

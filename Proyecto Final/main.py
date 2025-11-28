@@ -7,9 +7,7 @@ from reporte_de_ventas import generar_reporte_ventas
 init(autoreset=True)
 
 def menu():
-    ventana = Tk()
-    ventana.title("Menú Principal")
-    ventana.mainloop()
+    
 
     while True:
         print(Fore.CYAN + """
