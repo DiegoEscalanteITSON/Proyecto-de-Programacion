@@ -9,7 +9,7 @@ init(autoreset=True)
 def menu():
     ventana = Tk()
     ventana.title("Menú Principal")
-    ventana.withdraw()
+    ventana.mainloop()
 
     while True:
         print(Fore.CYAN + """
@@ -32,4 +32,4 @@ def menu():
 
 
 if __name__ == "__main__":
-    adrir_gui()
+    menu()

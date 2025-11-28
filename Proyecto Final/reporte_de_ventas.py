@@ -5,7 +5,7 @@ from archivo_ventas import obtener_ventas
 from archivo_ventas import guardar_venta_en_txt
 
 def generar_reporte_ventas(juego, cantidad):
-    ventas = generar_reporte_ventas()
+    ventas = obtener_ventas()
     if not ventas:
         print("No hay ventas registradas.")
         return
