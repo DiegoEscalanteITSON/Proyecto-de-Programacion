@@ -1,2 +1,2 @@
-DOOM Eternal - Cantidad: 1 - Precio unitario: $200 - Total: $200.0
-Hollow Knight - Cantidad: 2 - Precio unitario: $150 - Total: $300.0
+Hollow Knight - Cantidad: 5 - Precio unitario: $150 - Total: $750.0
+The Witcher 3 - Cantidad: 10 - Precio unitario: $350 - Total: $3500.0
