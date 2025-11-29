@@ -4,7 +4,6 @@ from tkinter import messagebox, ttk
 from archivo_ventas import agregar_venta, guardar_venta_en_txt, obtener_ventas
 from catalogo import Catalogo
 
-
 def ventana_registro():
     ventana = tk.Tk()
     ventana.title("Registro de Ventas")
