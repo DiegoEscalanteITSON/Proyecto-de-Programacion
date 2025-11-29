@@ -1,24 +1,43 @@
-# Archivo que guarda la ventas en txt
+# Archivo que guarda las ventas en txt
 # Modulo que maneja la logica de las ventas
 
-ventas = []   # lista global
+ventas = []   # lista global de ventas
 
-def agregar_venta(juego, cantidad):
-    """Agrega una venta a la lista de ventas.  """
-    ventas.append({"nombre": juego, "cantidad": cantidad})
-    print(f"✔ Venta agregada: {juego} - Cantidad: {cantidad}")
+def agregar_venta(juego, cantidad, precio_unitario=None):
+    """Agrega una venta a la lista de ventas."""
+    total = None
+    if precio_unitario is not None:
+        try:
+            total = float(precio_unitario) * int(cantidad)
+        except (ValueError, TypeError):
+            total = None
+
+    venta = {
+        "juego": juego,
+        "cantidad": int(cantidad),
+        "precio_unitario": precio_unitario,
+        "total": total
+    }
+    ventas.append(venta)
+    print(f"✔ Venta agregada: {juego} - Cantidad: {cantidad} - Precio unitario: {precio_unitario} - Total: {total}")
 
 def obtener_ventas():
+    """Devuelve la lista actual de ventas (referencia directa)."""
     return ventas
 
-def guardar_venta_en_txt(ventas):
-    """Guarda las ventas en un archivo de texto."""
-    if not ventas:
+def guardar_venta_en_txt(ventas_list):
+    """Guarda todas las ventas en un archivo de texto (sobrescribe)."""
+    if not ventas_list:
         print("No hay ventas para guardar.")
         return
-    with open("ventas.txt", "w", encoding="utf-8") as archivo:
-        for venta in ventas:
-            archivo.write(f"{venta['nombre']} - ${venta['precio']}\n")
-            print(f"Venta guardada: {venta['nombre']} - ${venta['precio']}")
 
-print("✔ Archivo ventas de registradas actualizado correctamente.")
+    try:
+        with open("ventas.txt", "w", encoding="utf-8") as archivo:
+            for venta in ventas_list:
+                line = f"{venta['juego']} - Cantidad: {venta['cantidad']}"
+                if venta.get('precio_unitario') is not None:
+                    line += f" - Precio unitario: ${venta['precio_unitario']} - Total: ${venta['total']}"
+                archivo.write(line + "\n")
+        print("✔ Archivo 'ventas.txt' actualizado correctamente.")
+    except Exception as e:
+        print(f"Error al guardar ventas en archivo: {e}")

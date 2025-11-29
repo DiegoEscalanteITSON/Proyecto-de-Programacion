@@ -1,14 +1,11 @@
 # El Main... no hay más ciencia
 from colorama import init, Fore
-from tkinter import Tk
-from gui_ventana import adrir_gui
+from gui_ventana import ventana_registro
 from reporte_de_ventas import generar_reporte_ventas
 
 init(autoreset=True)
 
 def menu():
-    
-
     while True:
         print(Fore.CYAN + """
               \n=== Menú Principal ===
@@ -19,7 +16,7 @@ def menu():
 
         opcion = input(Fore.YELLOW + "Seleccione una opción (1-3): ")
         if opcion == '1':
-            adrir_gui()
+            ventana_registro()
         elif opcion == '2':
             generar_reporte_ventas()
         elif opcion == '3':
