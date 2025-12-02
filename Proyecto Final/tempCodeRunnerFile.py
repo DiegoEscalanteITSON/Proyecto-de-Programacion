@@ -1,1 +1,1 @@
-    cargar_ventas_desde_txt()
+tk.Button(ventana, text="3. Salir", command=ventana.destroy, **btn_style).pack(pady=5)
