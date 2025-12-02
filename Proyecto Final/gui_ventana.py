@@ -5,19 +5,24 @@ from archivo_ventas import agregar_venta, guardar_venta_en_txt, obtener_ventas
 from catalogo import Catalogo
 
 def ventana_registro():
-    ventana = tk.Tk()
+    ventana = tk.Toplevel() 
     ventana.title("Registro de Ventas")
-    ventana.geometry("360x260")
+    ventana.geometry("420x360")
+    ventana.config(bg="#1e1e2f")
 
-    # Lista de nombres para el Combobox
-    nombres_juegos = [j["nombre"] for j in Catalogo]
+    lbl_style = {"bg": "#1e1e2f", "fg": "white", "font": ("Arial", 11)}
+    entry_style = {"bg": "#2c2c3e", "fg": "white", "insertbackground": "white"}
 
-    tk.Label(ventana, text="Seleccione un juego:").pack(pady=5)
+    nombres_juegos = [item["nombre"] for item in Catalogo]
+
+    tk.Label(ventana, text="Registro de Ventas", font=("Arial", 14), bg="#1e1e2f", fg="white").pack(pady=10)
+
+    tk.Label(ventana, text="Seleccione un juego:", **lbl_style).pack(pady=5)
     combo_juegos = ttk.Combobox(ventana, values=nombres_juegos, state="readonly")
     combo_juegos.pack()
 
-    tk.Label(ventana, text="Cantidad vendida:").pack(pady=5)
-    entrada_cantidad = tk.Entry(ventana)
+    tk.Label(ventana, text="Cantidad vendida:", **lbl_style).pack(pady=5)
+    entrada_cantidad = tk.Entry(ventana, **entry_style)
     entrada_cantidad.pack()
 
     def registrar():
@@ -57,5 +62,6 @@ def ventana_registro():
         combo_juegos.set("")
 
     tk.Button(ventana, text="Registrar venta", command=registrar).pack(pady=15)
+    tk.Button(ventana, text="Regresar a Menú", command=ventana.destroy).pack(pady=5)
 
     ventana.mainloop()
