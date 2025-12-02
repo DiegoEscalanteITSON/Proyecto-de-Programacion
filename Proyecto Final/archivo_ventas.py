@@ -38,6 +38,6 @@ def guardar_venta_en_txt(ventas_list):
                 if venta.get('precio_unitario') is not None:
                     line += f" - Precio unitario: ${venta['precio_unitario']} - Total: ${venta['total']}"
                 archivo.write(line + "\n")
-        print("✔ Archivo 'ventas.txt' actualizado correctamente.")
+        print("Archivo 'ventas.txt' actualizado correctamente.")
     except Exception as e:
         print(f"Error al guardar ventas en archivo: {e}")
