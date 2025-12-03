@@ -36,6 +36,3 @@ def generar_reporte_ventas():
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
-
-
-
